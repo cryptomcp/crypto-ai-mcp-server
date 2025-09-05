@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.pytype/
+.cache/
+.coverage
+htmlcov/
+
+# Env & secrets
+.env
+.env.local
+.env.*.local
+
+# Docusaurus / Node
+docs/node_modules/
+docs/build/
+docs/.docusaurus/
+docs/.cache/
+npm-debug.log*
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Project specific files to ignore
+*.log
+*.bak
+*.tar.gz
+
+# Temporary files
+*.tmp
+*.temp
+
+# Cursor IDE
+.cursor/

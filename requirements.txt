@@ -1,0 +1,44 @@
+# MCP SDK
+mcp[fast]>=1.0.0
+fastmcp>=0.1.0
+
+# Crypto exchanges and blockchains
+ccxt>=4.0.0
+web3>=6.0.0
+eth-account>=0.8.0
+solana>=0.32.0
+solders>=0.20.0
+httpx>=0.25.0
+
+# AI providers
+openai>=1.0.0
+google-generativeai>=0.3.0
+
+# Telegram bot
+python-telegram-bot>=20.0
+
+# Utilities
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+loguru>=0.7.0
+tenacity>=8.0.0
+python-dotenv>=1.0.0
+
+# News trading dependencies
+aiohttp>=3.8.0
+feedparser>=6.0.0
+textblob>=0.17.0
+
+# Additional utilities
+requests>=2.31.0
+aiofiles>=23.0.0
+cryptography>=41.0.0
+
+# Development dependencies
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-mock>=3.10.0
+black>=23.0.0
+isort>=5.12.0
+mypy>=1.5.0
+flake8>=6.0.0

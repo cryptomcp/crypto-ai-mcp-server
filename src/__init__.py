@@ -1,0 +1,1 @@
+# MCP Crypto Bot Package

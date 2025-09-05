@@ -1,0 +1,100 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-crypto-bot"
+version = "1.0.0"
+description = "Production-ready MCP server for crypto trading automation with AI decision support"
+authors = [{name = "cryptomcp"}]
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["mcp", "crypto", "trading", "ai", "blockchain", "solana", "ethereum"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    # MCP SDK
+    "mcp[fast]>=1.0.0",
+    "fastmcp>=0.1.0",
+
+    # Crypto exchanges and blockchains
+    "ccxt>=4.0.0",
+    "web3>=6.0.0",
+    "eth-account>=0.8.0",
+    "solana>=0.32.0",
+    "solders>=0.20.0",
+    "httpx>=0.25.0",
+
+    # AI providers
+    "openai>=1.0.0",
+    "google-generativeai>=0.3.0",
+
+    # Telegram bot
+    "python-telegram-bot>=20.0",
+
+    # Utilities
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "loguru>=0.7.0",
+    "tenacity>=8.0.0",
+    "python-dotenv>=1.0.0",
+
+    # News trading dependencies
+    "aiohttp>=3.8.0",
+    "feedparser>=6.0.0",
+    "textblob>=0.17.0",
+
+    # Additional utilities
+    "requests>=2.31.0",
+    "aiofiles>=23.0.0",
+    "cryptography>=41.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/cryptomcp/crypto-ai-mcp-server"
+Repository = "https://github.com/cryptomcp/crypto-ai-mcp-server"
+Documentation = "https://cryptomcp.github.io/crypto-ai-mcp-server/"
+Issues = "https://github.com/cryptomcp/crypto-ai-mcp-server/issues"
+Discussions = "https://github.com/cryptomcp/crypto-ai-mcp-server/discussions"
+
+[project.scripts]
+mcp-crypto-bot = "mcp_crypto_bot.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_crypto_bot"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-mock>=3.10.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.5.0",
+    "flake8>=6.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
